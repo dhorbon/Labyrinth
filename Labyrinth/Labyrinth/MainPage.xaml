@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Labyrinth.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <VerticalStackLayout x:Name="input">
+                <Label
+                    x:Name="error"
+                    TextColor="Red"
+                    IsVisible="false">
+                    Upewnij się, że w polach tekstowych występują tylko liczby, i są one liczbami naturalnymi!
+                </Label>
+                <Entry
+                    x:Name="height"
+                    Placeholder="Podaj wysokość"/>
+                <Entry
+                    x:Name="width"
+                    Placeholder="Podaj szerokość"/>
+                <Button
+                    Text="Stwóż Labirynt"
+                    Clicked="Build"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout x:Name="maze"
+                                 IsVisible="false">
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label
+                        BackgroundColor="Black"
+                        TextColor="White">
+                        Black tile is empty
+                    </Label>
+                    <Label></Label>
+                    <Label
+                        BackgroundColor="Red"
+                        TextColor="White">
+                        Red tile is Wall
+                    </Label>
+                    <Label></Label>
+                    <Label
+                        BackgroundColor="Blue"
+                        TextColor="White">
+                        Blue tile is path
+                    </Label>
+                </HorizontalStackLayout>
+                <Label/>
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Button
+                        Text="Save"
+                        Clicked="save"/>
+                    <Button
+                        Text="Load"
+                        Clicked="load"/>
+                </HorizontalStackLayout>
+                <Label/>
+                <Grid x:Name="grid"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Center">
+
+                </Grid>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
